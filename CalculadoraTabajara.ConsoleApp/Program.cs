@@ -35,7 +35,12 @@ namespace CalculadoraTabajara.ConsoleApp
                     case "2":
                         operacao = "Subtração";
                         break;
-
+                    case "3":
+                        operacao = "Multiplicação";
+                        break;
+                    case "4":
+                        operacao = "Divisão";
+                        break;
                     default:
                         break;
                 }
@@ -59,10 +64,10 @@ namespace CalculadoraTabajara.ConsoleApp
                 {
                     case "1": resultado = primeiroNumero + segundoNumero; break;
                     case "2": resultado = primeiroNumero - segundoNumero; break;
-
+                    case "3": resultado = primeiroNumero * segundoNumero; break;
+                    case "4": resultado = primeiroNumero / segundoNumero; break;
                     default: break;
                 }
-
 
                 Console.WriteLine($"\nO resultado da operação de {operacao} é: {resultado}");
 
