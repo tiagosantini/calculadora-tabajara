@@ -75,8 +75,21 @@ namespace CalculadoraTabajara.ConsoleApp
                 Console.Write("Digite o primeiro número: ");
                 double primeiroNumero = Convert.ToDouble(Console.ReadLine());
 
-                Console.Write("Digite o segundo número: ");
-                double segundoNumero = Convert.ToDouble(Console.ReadLine());
+                double segundoNumero;
+                do
+                {
+                    Console.Write("Digite o segundo número: ");
+                    segundoNumero = Convert.ToDouble(Console.ReadLine());
+
+                    if(segundoNumero == 0)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("O segundo número não pode ser zero, tente novamente.");
+                        Console.ReadKey();
+                    }
+
+                } while (segundoNumero == 0);
+               
 
                 double resultado = 0.0;
 
