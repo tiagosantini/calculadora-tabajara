@@ -25,6 +25,14 @@ namespace CalculadoraTabajara.ConsoleApp
                 Console.Write("Opcao: ");
                 string opcao = Console.ReadLine();
 
+                if(opcao != "1" && opcao != "2" && opcao != "3" && opcao != "4" && opcao != "s" && opcao != "S")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Opção inválida, tente novamente");
+                    Console.ReadLine();
+                    continue;
+                }
+
                 string operacao = "";
 
                 switch (opcao)
