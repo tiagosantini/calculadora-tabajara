@@ -20,6 +20,8 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 Console.WriteLine("Digite 1 para realizar cálculos de Adição");
                 Console.WriteLine("Digite 2 para realizar cálculos de Subtração");
+                Console.WriteLine("Digite 3 para realizar cálculos de Multiplicação");
+                Console.WriteLine("Digite 4 para realizar cálculos de Divisão");
                 Console.WriteLine("Digite S para sair");
 
                 Console.Write("Opcao: ");
@@ -55,8 +57,21 @@ namespace CalculadoraTabajara.ConsoleApp
                 Console.Write("Digite o primeiro número: ");
                 double primeiroNumero = Convert.ToDouble(Console.ReadLine());
 
-                Console.Write("Digite o segundo número: ");
-                double segundoNumero = Convert.ToDouble(Console.ReadLine());
+                double segundoNumero;
+                do
+                {
+                    Console.Write("Digite o segundo número: ");
+                    segundoNumero = Convert.ToDouble(Console.ReadLine());
+
+                    if(segundoNumero == 0)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("O segundo número não pode ser zero, tente novamente.");
+                        Console.ReadKey();
+                    }
+
+                } while (segundoNumero == 0);
+               
 
                 double resultado = 0.0;
 
