@@ -20,6 +20,8 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 Console.WriteLine("Digite 1 para realizar cálculos de Adição");
                 Console.WriteLine("Digite 2 para realizar cálculos de Subtração");
+                Console.WriteLine("Digite 3 para realizar cálculos de Multiplicação");
+                Console.WriteLine("Digite 2 para realizar cálculos de Divisão");
                 Console.WriteLine("Digite S para sair");
 
                 Console.Write("Opcao: ");
