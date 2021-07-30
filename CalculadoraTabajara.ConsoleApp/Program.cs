@@ -10,6 +10,8 @@ namespace CalculadoraTabajara.ConsoleApp
     {
         static void Main(string[] args)
         {
+            List<string> historicoOperacoes = new List<string>();
+
             while (true)
             {
                 Console.Clear();
@@ -22,9 +24,10 @@ namespace CalculadoraTabajara.ConsoleApp
                 Console.WriteLine("Digite 2 para realizar cálculos de Subtração");
                 Console.WriteLine("Digite 3 para realizar cálculos de Multiplicação");
                 Console.WriteLine("Digite 4 para realizar cálculos de Divisão");
+                Console.WriteLine("Digite 5 para visualizar o histórico de operações");
                 Console.WriteLine("Digite S para sair");
 
-                Console.Write("Opcao: ");
+                Console.Write("\nOpcao: ");
                 string opcao = Console.ReadLine();
 
                 string operacao = "";
@@ -49,6 +52,21 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 if (opcao.Equals("S", StringComparison.OrdinalIgnoreCase))
                     break;
+                
+                else if (opcao == "5")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Histórico de Operações\n");
+
+                    if (historicoOperacoes.Count == 0)
+                        Console.WriteLine("Nenhuma operação realizada até agora!");
+                    else
+                        foreach (string operacaoRealizada in historicoOperacoes)
+                            Console.WriteLine(operacaoRealizada);
+
+                    Console.ReadKey();
+                    continue;
+                }
 
                 Console.Clear();
 
@@ -64,11 +82,24 @@ namespace CalculadoraTabajara.ConsoleApp
 
                 switch (opcao)
                 {
-                    case "1": resultado = primeiroNumero + segundoNumero; break;
-                    case "2": resultado = primeiroNumero - segundoNumero; break;
-                    case "3": resultado = primeiroNumero * segundoNumero; break;
-                    case "4": resultado = primeiroNumero / segundoNumero; break;
-                    default: break;
+                    case "1": resultado = primeiroNumero + segundoNumero;
+                        historicoOperacoes.Add($"Adição: {primeiroNumero} + {segundoNumero} = {resultado}");
+                        break;
+
+                    case "2": resultado = primeiroNumero - segundoNumero;
+                        historicoOperacoes.Add($"Subtração: {primeiroNumero} - {segundoNumero} = {resultado}");
+                        break;
+
+                    case "3": resultado = primeiroNumero * segundoNumero;
+                        historicoOperacoes.Add($"Multiplicação: {primeiroNumero} * {segundoNumero} = {resultado}");
+                        break;
+
+                    case "4": resultado = primeiroNumero / segundoNumero;
+                        historicoOperacoes.Add($"Divisão: {primeiroNumero} / {segundoNumero} = {resultado}");
+                        break;
+
+                    default:
+                        break;
                 }
 
                 Console.WriteLine($"\nO resultado da operação de {operacao} é: {resultado}");
